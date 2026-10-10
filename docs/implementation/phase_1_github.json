@@ -1,0 +1,43 @@
+{
+  "project_author": "Michael Mart",
+  "prepared_by": "Codex",
+  "pr": {
+    "number": 15,
+    "url": "https://github.com/mikepmart/SPMS/pull/15",
+    "state": "open",
+    "merged": false,
+    "head_sha": "8d2ca767c0a6a14234aa145d26c1b5b912b38030",
+    "base": "docs/phase-0-review"
+  },
+  "issues": [
+    {
+      "number": 2,
+      "title": "Phase 1: Repository and development environment",
+      "url": "https://github.com/mikepmart/SPMS/issues/2",
+      "state": "open",
+      "delivery": "COMPLETE FOR REVIEW / UNMERGED"
+    },
+    {
+      "number": 12,
+      "title": "Phase 1: bootstrap locked backend and coverage gates",
+      "url": "https://github.com/mikepmart/SPMS/issues/12",
+      "state": "open",
+      "delivery": "COMPLETE FOR REVIEW / UNMERGED"
+    },
+    {
+      "number": 13,
+      "title": "Phase 1: bootstrap locked React and browser smoke verification",
+      "url": "https://github.com/mikepmart/SPMS/issues/13",
+      "state": "open",
+      "delivery": "COMPLETE FOR REVIEW / UNMERGED"
+    },
+    {
+      "number": 14,
+      "title": "Phase 1: CI, supply-chain evidence and developer handoff",
+      "url": "https://github.com/mikepmart/SPMS/issues/14",
+      "state": "open",
+      "delivery": "COMPLETE FOR REVIEW / UNMERGED"
+    }
+  ],
+  "source_verification_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742"
+}
