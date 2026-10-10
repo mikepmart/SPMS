@@ -1,0 +1,86 @@
+{
+  "project_author": "Michael Mart",
+  "prepared_by": "Codex",
+  "issues": [
+    {
+      "phase": 0,
+      "title": "Phase 0: Documentation and project review",
+      "draft": "github_issues/phase_0.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 1,
+      "url": "https://github.com/mikepmart/SPMS/issues/1"
+    },
+    {
+      "phase": 1,
+      "title": "Phase 1: Repository and development environment",
+      "draft": "github_issues/phase_1.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 2,
+      "url": "https://github.com/mikepmart/SPMS/issues/2"
+    },
+    {
+      "phase": 2,
+      "title": "Phase 2: Domain models and validation",
+      "draft": "github_issues/phase_2.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 3,
+      "url": "https://github.com/mikepmart/SPMS/issues/3"
+    },
+    {
+      "phase": 3,
+      "title": "Phase 3: Alarm state machine",
+      "draft": "github_issues/phase_3.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 4,
+      "url": "https://github.com/mikepmart/SPMS/issues/4"
+    },
+    {
+      "phase": 4,
+      "title": "Phase 4: Application services",
+      "draft": "github_issues/phase_4.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 5,
+      "url": "https://github.com/mikepmart/SPMS/issues/5"
+    },
+    {
+      "phase": 5,
+      "title": "Phase 5: Infrastructure",
+      "draft": "github_issues/phase_5.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 6,
+      "url": "https://github.com/mikepmart/SPMS/issues/6"
+    },
+    {
+      "phase": 6,
+      "title": "Phase 6: API and cybersecurity",
+      "draft": "github_issues/phase_6.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 7,
+      "url": "https://github.com/mikepmart/SPMS/issues/7"
+    },
+    {
+      "phase": 7,
+      "title": "Phase 7: Frontend dashboard",
+      "draft": "github_issues/phase_7.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 8,
+      "url": "https://github.com/mikepmart/SPMS/issues/8"
+    },
+    {
+      "phase": 8,
+      "title": "Phase 8: System verification",
+      "draft": "github_issues/phase_8.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 9,
+      "url": "https://github.com/mikepmart/SPMS/issues/9"
+    },
+    {
+      "phase": 9,
+      "title": "Phase 9: Release preparation",
+      "draft": "github_issues/phase_9.md",
+      "status": "OPEN \u2014 VERIFIED VIA GITHUB API",
+      "number": 10,
+      "url": "https://github.com/mikepmart/SPMS/issues/10"
+    }
+  ]
+}
