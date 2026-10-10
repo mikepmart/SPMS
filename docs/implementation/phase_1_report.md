@@ -106,6 +106,10 @@ Branch: `chore/phase-1-environment`, stacked on `docs/phase-0-review` at
 The Phase 1 PR targets that branch so its diff contains only Phase 1 work;
 retarget to `main` after the owner reviews and merges Phase 0.
 
+Phase 1 PR: [#15 — establish verified development environments and CI](https://github.com/mikepmart/SPMS/pull/15),
+OPEN and UNMERGED. [GitHub delivery record](phase_1_github.json) preserves the
+read-back PR and issue states. Issues #2/#12/#13/#14 remain open for owner review.
+
 - RED: `bfd31f8e9c5b398c4d0efa109e05e3f2bd10a1d3`.
 - GREEN: `0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d`.
 - Verified source/toolchain/CI: `5cdc17663f1586309071b64157cb881342a3fe8b`.
