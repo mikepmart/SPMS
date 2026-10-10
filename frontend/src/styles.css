@@ -1,0 +1,50 @@
+/* Project: Simulated Patient Monitoring System (SPMS)
+ * Project Author: Michael Mart | Prepared by Codex
+ * File: styles.css
+ * Purpose: Keep the initial simulation shell readable across viewport sizes.
+ * Responsibilities: Typography, layout, visible warning and text-based status.
+ * Requirements: SF-001 (scaffold contribution); Control: RC-SAF-010 (partial).
+ */
+:root {
+  font-family: system-ui, sans-serif;
+  color: #172b3a;
+  background: #f3f6f8;
+  font-synthesis: none;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.shell {
+  width: min(100% - 2rem, 48rem);
+  margin: 4rem auto;
+}
+.eyebrow {
+  color: #435b69;
+  font-size: 0.875rem;
+}
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.2;
+}
+h2 {
+  font-size: 1.25rem;
+}
+.notice {
+  padding: 1rem;
+  border-left: 0.3rem solid #8a4e00;
+  background: #fff0cf;
+  color: #583200;
+  font-weight: 700;
+}
+.status {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #c6d1d8;
+  border-radius: 0.5rem;
+}

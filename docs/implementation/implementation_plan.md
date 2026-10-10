@@ -1,7 +1,8 @@
 # Sequential implementation plan
 
 Project Author: Michael Mart
-Prepared by Codex, 10 October 2026. Status: PROPOSED; Phase 1 approval PENDING.
+Prepared by Codex, 10 October 2026. Plan status: PROPOSED; Phase 1 progression
+APPROVED in conversation (see [approval record](approvals.md)).
 
 ## Scope and authority
 
@@ -12,7 +13,8 @@ plan. The [inventory](requirements_inventory.md) carries the exact 78 requiremen
 and original acceptance criteria. The [review](document_review.md) and
 [open questions](open_questions.md) qualify the baseline and its unresolved details.
 
-Only Phase 0 has been performed. Each subsequent major phase needs Michael Mart's
+Phase 0 is reviewed and [Phase 1 setup is complete](phase_1_report.md), pending
+owner review. Each subsequent major phase needs Michael Mart's
 explicit progression approval after its report and reviewable PR. Opening an issue
 does not start a phase, approve a baseline correction, accept risk or authorize merge.
 

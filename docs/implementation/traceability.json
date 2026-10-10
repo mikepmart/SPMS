@@ -1,0 +1,1192 @@
+{
+  "project_author": "Michael Mart",
+  "prepared_by": "Codex",
+  "baseline": "PROPOSED / UNAPPROVED; original requirement and criteria wording preserved",
+  "source_inventory": "requirements_inventory.json",
+  "requirements": [
+    {
+      "id": "FR-001",
+      "requirement": "The application shall generate synthetic heart rate and oxygen saturation readings once per second during an active simulation.",
+      "srs_acceptance": "A controlled 10-second simulation produces 10 scheduled reading sets.",
+      "rtm_acceptance": "A controlled 10-second simulation produces 10 scheduled reading sets.",
+      "original_rtm_row": 2,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-001",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-002",
+      "requirement": "The frontend shall display each accepted reading within one second of receipt.",
+      "srs_acceptance": "An automated integration test verifies the displayed value and elapsed time.",
+      "rtm_acceptance": "An automated integration test verifies the displayed value and elapsed time.",
+      "original_rtm_row": 3,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-002",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-003",
+      "requirement": "Each displayed measurement shall include its name, value, unit, and measurement timestamp.",
+      "srs_acceptance": "Heart rate displays in bpm; oxygen saturation displays in percent; timestamps match accepted readings.",
+      "rtm_acceptance": "Heart rate displays in bpm; oxygen saturation displays in percent; timestamps match accepted readings.",
+      "original_rtm_row": 4,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-003",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-004",
+      "requirement": "The application shall accept finite numeric heart rate values from 0–300 bpm and oxygen saturation values from 0–100%, inclusive. These ranges are simulation input limits.",
+      "srs_acceptance": "Boundary values are accepted; out-of-range, missing, nonnumeric, and nonfinite values are rejected.",
+      "rtm_acceptance": "Boundary values are accepted; out-of-range, missing, nonnumeric, and nonfinite values are rejected.",
+      "original_rtm_row": 5,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-004",
+      "original_risk_control_references": "RC-SAF-003",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-005",
+      "requirement": "Invalid readings shall not replace the last valid measurement. The frontend shall indicate invalid input, and the application shall record the rejection.",
+      "srs_acceptance": "Injecting an invalid reading preserves the last valid value and creates a rejection event.",
+      "rtm_acceptance": "Injecting an invalid reading preserves the last valid value and creates a rejection event.",
+      "original_rtm_row": 6,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-005",
+      "original_risk_control_references": "RC-SAF-003",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-006",
+      "requirement": "The application shall activate a low-oxygen alarm after three consecutive valid readings below 92%. This threshold is a demonstration setting.",
+      "srs_acceptance": "Two readings below 92% do not activate the alarm; the third activates it. A value of exactly 92% is not low.",
+      "rtm_acceptance": "Two readings below 92% do not activate the alarm; the third activates it. A value of exactly 92% is not low.",
+      "original_rtm_row": 7,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-006",
+      "original_risk_control_references": "RC-SAF-001",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-007",
+      "requirement": "A valid oxygen reading at or above 92%, an invalid oxygen reading, or a sensor disconnect shall reset the pending low-oxygen count.",
+      "srs_acceptance": "Each reset condition requires three new consecutive low readings before activation.",
+      "rtm_acceptance": "Each reset condition requires three new consecutive low readings before activation.",
+      "original_rtm_row": 8,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-007",
+      "original_risk_control_references": "RC-SAF-001",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-008",
+      "requirement": "An active low-oxygen alarm shall clear after three consecutive valid oxygen readings at or above 92%. Invalid readings shall reset the recovery count.",
+      "srs_acceptance": "Two qualifying recovery readings leave the alarm active; the third clears it.",
+      "rtm_acceptance": "Two qualifying recovery readings leave the alarm active; the third clears it.",
+      "original_rtm_row": 9,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-008",
+      "original_risk_control_references": "RC-SAF-001",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-009",
+      "requirement": "The user shall be able to acknowledge an active alarm. Acknowledgment shall change its status without clearing the underlying condition.",
+      "srs_acceptance": "After acknowledgment, the alarm remains visible as active and acknowledged until its clearance criteria are met.",
+      "rtm_acceptance": "After acknowledgment, the alarm remains visible as active and acknowledged until its clearance criteria are met.",
+      "original_rtm_row": 10,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-009",
+      "original_risk_control_references": "RC-SAF-004",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-010",
+      "requirement": "A newly activated alarm following clearance shall require a new acknowledgment.",
+      "srs_acceptance": "A previous acknowledgment does not carry over to a later alarm episode.",
+      "rtm_acceptance": "A previous acknowledgment does not carry over to a later alarm episode.",
+      "original_rtm_row": 11,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-010",
+      "original_risk_control_references": "RC-SAF-004",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-011",
+      "requirement": "A measurement shall be marked stale when more than five seconds have elapsed since receipt of its last valid reading.",
+      "srs_acceptance": "At exactly five seconds it remains current; after five seconds it is stale. Before the first valid reading, it displays “No data.”",
+      "rtm_acceptance": "At exactly five seconds it remains current; after five seconds it is stale. Before the first valid reading, it displays “No data.”",
+      "original_rtm_row": 12,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-011",
+      "original_risk_control_references": "RC-SAF-003",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-012",
+      "requirement": "The frontend shall identify a simulated sensor disconnect and shall preserve the last valid readings with stale indicators when applicable.",
+      "srs_acceptance": "Disconnecting the sensor displays its disconnected state; measurements become stale according to FR-011.",
+      "rtm_acceptance": "Disconnecting the sensor displays its disconnected state; measurements become stale according to FR-011.",
+      "original_rtm_row": 13,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-012",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-013",
+      "requirement": "The application shall record session start/stop, alarm activation, acknowledgment, clearance, invalid input, and sensor disconnect/reconnect events.",
+      "srs_acceptance": "Each event contains a session identifier, event type, UTC timestamp, and relevant details.",
+      "rtm_acceptance": "Each event contains a session identifier, event type, UTC timestamp, and relevant details.",
+      "original_rtm_row": 14,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-013",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-014",
+      "requirement": "The frontend shall display session events in chronological order.",
+      "srs_acceptance": "A known event sequence appears in the expected order, including events with identical timestamps.",
+      "rtm_acceptance": "A known event sequence appears in the expected order, including events with identical timestamps.",
+      "original_rtm_row": 15,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-014",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-015",
+      "requirement": "The application shall reject readings whose measurement timestamp is equal to or earlier than the last accepted timestamp for that measurement.",
+      "srs_acceptance": "Duplicate and older readings do not update displayed values or alarm counters and produce rejection events.",
+      "rtm_acceptance": "Duplicate and older readings do not update displayed values or alarm counters and produce rejection events.",
+      "original_rtm_row": 16,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-015",
+      "original_risk_control_references": "RC-SAF-006",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "FR-016",
+      "requirement": "Starting a new session shall reset displayed readings, alarm states, and pending counters while retaining prior session records.",
+      "srs_acceptance": "A new session begins with “No data” and no active alarms; previous events remain stored under their original session identifier.",
+      "rtm_acceptance": "A new session begins with “No data” and no active alarms; previous events remain stored under their original session identifier.",
+      "original_rtm_row": 17,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-FR-016",
+      "original_risk_control_references": "RC-SAF-008",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SF-001",
+      "requirement": "Every monitoring screen shall display “Simulation only — not for clinical use.”",
+      "srs_acceptance": "Automated browser tests verify the notice is visible.",
+      "rtm_acceptance": "Automated browser tests verify the notice is visible.",
+      "original_rtm_row": 18,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SF-001",
+      "original_risk_control_references": "RC-SAF-010",
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "frontend/src/App.tsx"
+        ],
+        "tests_or_checks": [
+          "frontend/src/App.test.tsx",
+          "frontend/e2e/bootstrap.spec.ts"
+        ],
+        "supporting_control_references": [
+          "RC-SAF-010"
+        ],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Exact notice visible on the sole scaffold screen; future monitoring screens not implemented."
+      }
+    },
+    {
+      "id": "SF-002",
+      "requirement": "Alarm and sensor states shall be communicated through text as well as color.",
+      "srs_acceptance": "Each state has a readable label; no state depends solely on color.",
+      "rtm_acceptance": "Each state has a readable label; no state depends solely on color.",
+      "original_rtm_row": 19,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SF-002",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SF-003",
+      "requirement": "Missing, invalid, or stale data shall not be presented as a normal current measurement.",
+      "srs_acceptance": "Fault scenarios display the corresponding status alongside any retained value.",
+      "rtm_acceptance": "Fault scenarios display the corresponding status alongside any retained value.",
+      "original_rtm_row": 20,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SF-003",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SF-004",
+      "requirement": "Sensor disconnection shall not clear an existing physiological alarm.",
+      "srs_acceptance": "An active low-oxygen alarm remains active during disconnection.",
+      "rtm_acceptance": "An active low-oxygen alarm remains active during disconnection.",
+      "original_rtm_row": 21,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SF-004",
+      "original_risk_control_references": "RC-SAF-002",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SF-005",
+      "requirement": "If event storage fails, the application shall display an event-recording failure indicator and continue evaluating incoming readings.",
+      "srs_acceptance": "An injected storage failure produces a visible indicator while alarm evaluation continues. The indicator remains until a successful subsequent write.",
+      "rtm_acceptance": "An injected storage failure produces a visible indicator while alarm evaluation continues. The indicator remains until a successful subsequent write.",
+      "original_rtm_row": 22,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SF-005",
+      "original_risk_control_references": "RC-SAF-005",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SF-006",
+      "requirement": "Automated tests shall verify each identified software risk control.",
+      "srs_acceptance": "Every risk-control entry links to at least one passing test.",
+      "rtm_acceptance": "Every risk-control entry links to at least one passing test.",
+      "original_rtm_row": 23,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SF-006",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "AR-001",
+      "requirement": "The monitoring rules and alarm state transitions shall be implemented in Python independently of the frontend, network interface, and storage implementation.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 24,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-AR-001",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "AR-002",
+      "requirement": "Sensor input, time, and event storage shall be replaceable with controlled test implementations.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 25,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-AR-002",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "AR-003",
+      "requirement": "The frontend shall display application state; authoritative alarm decisions shall reside in the Python application.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 26,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-AR-003",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "AR-004",
+      "requirement": "The codebase shall pass its configured lint and formatting checks before a change is accepted.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 27,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-AR-004",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "backend/pyproject.toml",
+          "frontend/eslint.config.js",
+          "frontend/package.json"
+        ],
+        "tests_or_checks": [
+          "ruff format --check .",
+          "ruff check .",
+          "npm run format:check",
+          "npm run lint"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Configured formatting and lint pass; source acceptance criteria approval remains pending."
+      }
+    },
+    {
+      "id": "AR-005",
+      "requirement": "Code review shall assess duplicated logic, excessive complexity, hidden mutable state, unclear naming, and overly broad exception handling.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 28,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-AR-005",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "AR-006",
+      "requirement": "Dependencies and their resolved versions shall be recorded to support reproducible installation and testing.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 29,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-AR-006",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "backend/uv.lock",
+          "frontend/package-lock.json",
+          ".python-version",
+          ".node-version",
+          ".uv-version"
+        ],
+        "tests_or_checks": [
+          "uv sync --locked --project backend",
+          "npm ci",
+          "clean install rehearsal"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Exact dependencies/runtimes recorded and fresh installs tested."
+      }
+    },
+    {
+      "id": "QA-001",
+      "requirement": "Functional changes shall follow a test-driven development workflow.",
+      "srs_acceptance": "Development history demonstrates a failing test, implementation, and passing test for representative features.",
+      "rtm_acceptance": "Development history demonstrates a failing test, implementation, and passing test for representative features.",
+      "original_rtm_row": 30,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-QA-001",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "docs/implementation/phase_1_tdd.md"
+        ],
+        "tests_or_checks": [
+          "backend/tests/",
+          "frontend/src/App.test.tsx"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Intentional RED bfd31f8 precedes GREEN 0a5a8f8; applies to bootstrap only."
+      }
+    },
+    {
+      "id": "QA-002",
+      "requirement": "Automated unit tests shall cover validation, alarm activation and recovery boundaries, acknowledgment, timestamp ordering, and stale-data detection.",
+      "srs_acceptance": "Required scenarios pass using controlled input and time.",
+      "rtm_acceptance": "Required scenarios pass using controlled input and time.",
+      "original_rtm_row": 31,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-QA-002",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "QA-003",
+      "requirement": "Automated integration tests shall verify sensor input, application state, and event-storage interactions.",
+      "srs_acceptance": "Tests verify normal operation and injected failures.",
+      "rtm_acceptance": "Tests verify normal operation and injected failures.",
+      "original_rtm_row": 32,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-QA-003",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "backend/src/spms/api/app.py"
+        ],
+        "tests_or_checks": [
+          "tests/integration/test_health.py::test_health_identifies_the_synthetic_only_scaffold",
+          "tests/integration/test_health.py::test_monitoring_routes_are_not_exposed_by_bootstrap"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "HTTP integration smoke infrastructure only; sensor/state/event-store acceptance scenarios remain NOT RUN."
+      }
+    },
+    {
+      "id": "QA-004",
+      "requirement": "Automated browser tests shall verify monitoring, alarm acknowledgment, sensor failure, recovery, and event-history workflows.",
+      "srs_acceptance": "All required workflows pass.",
+      "rtm_acceptance": "All required workflows pass.",
+      "original_rtm_row": 33,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-QA-004",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "frontend/playwright.config.ts",
+          "frontend/e2e/bootstrap.spec.ts"
+        ],
+        "tests_or_checks": [
+          "loads the stopped simulation shell and the nonclinical backend"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Real Chromium bootstrap test only; monitoring/ack/failure/recovery/history scenarios remain NOT RUN."
+      }
+    },
+    {
+      "id": "QA-005",
+      "requirement": "Automated tests shall achieve at least 90% statement coverage across maintained Python application code.",
+      "srs_acceptance": "The coverage report meets the threshold. Test code and generated files are excluded; other exclusions require documented justification.",
+      "rtm_acceptance": "The coverage report meets the threshold. Test code and generated files are excluded; other exclusions require documented justification.",
+      "original_rtm_row": 34,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-QA-005",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "backend/pyproject.toml",
+          "backend/tools/check_coverage.py"
+        ],
+        "tests_or_checks": [
+          "tests/tooling/test_coverage_gate.py",
+          "pytest --cov=spms --cov-branch"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Application statements 7/7 (100%); exact 90% gate tested against 89%, 89.9%, 90%, 100% and invalid evidence."
+      }
+    },
+    {
+      "id": "QA-006",
+      "requirement": "Branch coverage shall be measured and reported separately.",
+      "srs_acceptance": "Each automated verification run produces a branch-coverage report.",
+      "rtm_acceptance": "Each automated verification run produces a branch-coverage report.",
+      "original_rtm_row": 35,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-QA-006",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "backend/tools/check_coverage.py"
+        ],
+        "tests_or_checks": [
+          "tests/tooling/test_coverage_gate.py::test_statement_gate_is_independent_of_branches"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Branches reported apart; application currently 0/0, not applicable."
+      }
+    },
+    {
+      "id": "QA-007",
+      "requirement": "Each proposed code change shall trigger automated tests, lint checks, formatting checks, and coverage measurement.",
+      "srs_acceptance": "Any failed required check prevents the change from being accepted.",
+      "rtm_acceptance": "Any failed required check prevents the change from being accepted.",
+      "original_rtm_row": 36,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-QA-007",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          ".github/workflows/verify.yml"
+        ],
+        "tests_or_checks": [
+          "seven CI jobs and their executable steps"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Push and PR workflow executes tests, lint, formatting, types and coverage on Windows/Linux."
+      }
+    },
+    {
+      "id": "QA-008",
+      "requirement": "Automated verification shall retain test results and coverage reports.",
+      "srs_acceptance": "Reports identify the tested source revision and run outcome.",
+      "rtm_acceptance": "Reports identify the tested source revision and run outcome.",
+      "original_rtm_row": 37,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-QA-008",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          ".github/workflows/verify.yml",
+          "docs/implementation/phase_1_verification.json"
+        ],
+        "tests_or_checks": [
+          "seven downloaded CI artifacts with verified SHA-256 digests"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "c429e213676014fb4b8f500613b626a407cffd21",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "JUnit, coverage, security and SBOM artifacts retained 30 days; preserve release evidence separately before expiry."
+      }
+    },
+    {
+      "id": "DOC-001",
+      "requirement": "The project shall maintain version-controlled requirements, an architecture description, a hazard analysis, and a test plan.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 38,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-DOC-001",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "DOC-002",
+      "requirement": "A traceability matrix shall connect each functional and safety requirement to its implementation and verification tests.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 39,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-DOC-002",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "docs/implementation/traceability.json",
+          "docs/implementation/traceability.md"
+        ],
+        "tests_or_checks": [
+          "78 exact requirement/criteria rows compared to inventory; 13 source hashes unchanged"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "c429e213676014fb4b8f500613b626a407cffd21",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Additive working RTM records implementation/test/control/result/commit/CI references; original XLSX preserved."
+      }
+    },
+    {
+      "id": "DOC-003",
+      "requirement": "The hazard analysis shall identify hazards, foreseeable causes, software controls, and control-verification tests.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 40,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-DOC-003",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "DOC-004",
+      "requirement": "A validation report shall document whether representative users can complete the intended simulated workflows.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 41,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-DOC-004",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "DOC-005",
+      "requirement": "Each release shall identify its source revision, verification results, known defects, and limitations.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 42,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-DOC-005",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "DOC-006",
+      "requirement": "A regulatory-context document shall explain how the project’s artifacts relate to relevant FDA software guidance and distinguish educational evidence from a regulatory submission.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Acceptance criteria to be approved",
+      "original_rtm_row": 43,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-DOC-006",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-001",
+      "requirement": "Protected operations shall require authenticated operator identity in network-accessible mode.",
+      "srs_acceptance": "Unauthenticated start/stop, acknowledge, disconnect and event-history requests are rejected; tests confirm no state change.",
+      "rtm_acceptance": "Unauthenticated start/stop, acknowledge, disconnect and event-history requests are rejected; tests confirm no state change.",
+      "original_rtm_row": 44,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-001",
+      "original_risk_control_references": "RC-CYB-001",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-002",
+      "requirement": "Backend shall authorize each state-changing operation and session subscription.",
+      "srs_acceptance": "Observer requests to modify session or alarm state return 403; operator requests succeed; cross-session access denied.",
+      "rtm_acceptance": "Observer requests to modify session or alarm state return 403; operator requests succeed; cross-session access denied.",
+      "original_rtm_row": 45,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-002",
+      "original_risk_control_references": "RC-CYB-001; RC-CYB-006; RC-SAF-009",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-003",
+      "requirement": "Network deployments shall use HTTPS and WSS; local-only mode shall bind to loopback.",
+      "srs_acceptance": "Configuration tests reject insecure network binding and plaintext remote transport.",
+      "rtm_acceptance": "Configuration tests reject insecure network binding and plaintext remote transport.",
+      "original_rtm_row": 46,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-003",
+      "original_risk_control_references": "RC-CYB-008",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-004",
+      "requirement": "All API and WebSocket inputs shall be schema-validated with bounded sizes and typed fields.",
+      "srs_acceptance": "Malformed, oversized, nonfinite, duplicate and out-of-order inputs are rejected without altering accepted state.",
+      "rtm_acceptance": "Malformed, oversized, nonfinite, duplicate and out-of-order inputs are rejected without altering accepted state.",
+      "original_rtm_row": 47,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-004",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-005",
+      "requirement": "Security-relevant events shall be recorded separately from clinical-simulation events without secrets.",
+      "srs_acceptance": "Authentication failures, denied commands and security configuration changes produce redacted audit records.",
+      "rtm_acceptance": "Authentication failures, denied commands and security configuration changes produce redacted audit records.",
+      "original_rtm_row": 48,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-005",
+      "original_risk_control_references": "RC-CYB-003; RC-CYB-012",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-006",
+      "requirement": "Stored event data and application secrets shall have least-privilege access protections.",
+      "srs_acceptance": "Tests/configuration review verify restricted file permissions and no embedded credentials.",
+      "rtm_acceptance": "Tests/configuration review verify restricted file permissions and no embedded credentials.",
+      "original_rtm_row": 49,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-006",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-007",
+      "requirement": "CI shall scan Python and frontend dependencies for known vulnerabilities.",
+      "srs_acceptance": "Scan artifacts retained; unresolved findings are reviewed and dispositioned before release.",
+      "rtm_acceptance": "Scan artifacts retained; unresolved findings are reviewed and dispositioned before release.",
+      "original_rtm_row": 50,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-007",
+      "original_risk_control_references": "RC-CYB-007",
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          ".github/workflows/verify.yml",
+          "backend/uv.lock",
+          "frontend/package-lock.json"
+        ],
+        "tests_or_checks": [
+          "pip-audit --require-hashes --disable-pip --strict",
+          "npm audit --json"
+        ],
+        "supporting_control_references": [
+          "RC-CYB-007"
+        ],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "CI scans exact Python and npm runtime/development dependencies; zero known findings in recorded run, no skips/suppressions."
+      }
+    },
+    {
+      "id": "SEC-008",
+      "requirement": "Each release shall produce an SBOM covering backend and frontend resolved dependencies.",
+      "srs_acceptance": "Machine-readable CycloneDX or SPDX SBOM generated and linked to revision.",
+      "rtm_acceptance": "Machine-readable CycloneDX or SPDX SBOM generated and linked to revision.",
+      "original_rtm_row": 51,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-008",
+      "original_risk_control_references": "RC-CYB-007",
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          ".github/workflows/verify.yml",
+          "frontend/package.json"
+        ],
+        "tests_or_checks": [
+          "cyclonedx-py environment",
+          "npm run sbom"
+        ],
+        "supporting_control_references": [
+          "RC-CYB-007"
+        ],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Phase 1 target-environment CycloneDX SBOMs generated; no release exists and release requirement remains pending."
+      }
+    },
+    {
+      "id": "SEC-009",
+      "requirement": "A version-controlled threat model shall describe assets, data flows, entry points and trust boundaries.",
+      "srs_acceptance": "Review records show identified threats, controls and owners.",
+      "rtm_acceptance": "Review records show identified threats, controls and owners.",
+      "original_rtm_row": 52,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-009",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-010",
+      "requirement": "Cybersecurity risks shall trace to mitigations and verification evidence.",
+      "srs_acceptance": "Every identified security risk has a documented disposition and at least one linked verification activity.",
+      "rtm_acceptance": "Every identified security risk has a documented disposition and at least one linked verification activity.",
+      "original_rtm_row": 53,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-010",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-011",
+      "requirement": "Malformed and unauthorized requests shall not corrupt monitoring or alarm state.",
+      "srs_acceptance": "Fault-injection tests preserve state and show explicit error responses.",
+      "rtm_acceptance": "Fault-injection tests preserve state and show explicit error responses.",
+      "original_rtm_row": 54,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-011",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-012",
+      "requirement": "The project shall document vulnerability intake, triage, remediation and release decisions.",
+      "srs_acceptance": "A sample vulnerability record demonstrates the process and evidence retention.",
+      "rtm_acceptance": "A sample vulnerability record demonstrates the process and evidence retention.",
+      "original_rtm_row": 55,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-012",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-013",
+      "requirement": "The system shall use least-privilege and secure configuration defaults.",
+      "srs_acceptance": "Default configuration disallows external network exposure and debug endpoints.",
+      "rtm_acceptance": "Default configuration disallows external network exposure and debug endpoints.",
+      "original_rtm_row": 56,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-013",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "backend/src/spms/api/app.py",
+          "frontend/vite.config.ts",
+          "frontend/playwright.config.ts",
+          ".github/workflows/verify.yml"
+        ],
+        "tests_or_checks": [
+          "tests/unit/test_bootstrap.py::test_bootstrap_disables_debug_and_interactive_api_docs",
+          "frontend/e2e/bootstrap.spec.ts"
+        ],
+        "supporting_control_references": [
+          "RC-CYB-006"
+        ],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Loopback development defaults, no debug/docs and read-only CI token; full secure product/network-mode control not implemented."
+      }
+    },
+    {
+      "id": "SEC-014",
+      "requirement": "Alarm acknowledgment shall be authorized and bound to the current alarm episode.",
+      "srs_acceptance": "Unauthorized, stale-episode and duplicate acknowledgment scenarios have passing tests.",
+      "rtm_acceptance": "Unauthorized, stale-episode and duplicate acknowledgment scenarios have passing tests.",
+      "original_rtm_row": 57,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-014",
+      "original_risk_control_references": "RC-CYB-010; RC-SAF-004",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-015",
+      "requirement": "Release documentation shall define secure update, rollback and integrity verification procedures.",
+      "srs_acceptance": "A controlled update/rollback exercise is recorded.",
+      "rtm_acceptance": "A controlled update/rollback exercise is recorded.",
+      "original_rtm_row": 58,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-015",
+      "original_risk_control_references": "RC-CYB-011",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "SEC-016",
+      "requirement": "Transport interruption shall be differentiated from sensor disconnection and shown explicitly.",
+      "srs_acceptance": "WebSocket interruption produces connection warning and snapshot resynchronization after reconnect.",
+      "rtm_acceptance": "WebSocket interruption produces connection warning and snapshot resynchronization after reconnect.",
+      "original_rtm_row": 59,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-SEC-016",
+      "original_risk_control_references": "RC-SAF-007; RC-CYB-005",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "PRIV-001",
+      "requirement": "The simulator shall use synthetic physiological measurements only.",
+      "srs_acceptance": "Test data and UI include no actual patient records; release review confirms synthetic-only datasets.",
+      "rtm_acceptance": "Test data and UI include no actual patient records; release review confirms synthetic-only datasets.",
+      "original_rtm_row": 60,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-PRIV-001",
+      "original_risk_control_references": null,
+      "status": "PARTIAL / SUPPORTING EVIDENCE ONLY — NOT VERIFIED",
+      "phase_1": {
+        "source_code": [
+          "frontend/src/App.tsx",
+          "backend/src/spms/api/app.py"
+        ],
+        "tests_or_checks": [
+          "frontend/src/App.test.tsx",
+          "tests/integration/test_health.py::test_health_identifies_the_synthetic_only_scaffold"
+        ],
+        "supporting_control_references": [],
+        "result": "PASS within bootstrap/process scope; full requirement NOT VERIFIED",
+        "implementation_commit": "0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d",
+        "verified_source_commit": "5cdc17663f1586309071b64157cb881342a3fe8b",
+        "ci_run": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+        "evidence": "phase_1_verification.json",
+        "limitation": "Synthetic-only identity and stopped state; no measurement generation, storage or personal data introduced. Full data-flow verification pending."
+      }
+    },
+    {
+      "id": "PRIV-002",
+      "requirement": "The system shall not require patient names, dates of birth, or medical record identifiers.",
+      "srs_acceptance": "Data schema review confirms absence of patient-identifying fields.",
+      "rtm_acceptance": "Data schema review confirms absence of patient-identifying fields.",
+      "original_rtm_row": 61,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-PRIV-002",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "PRIV-003",
+      "requirement": "The project shall maintain a data inventory covering events, logs, accounts and metadata.",
+      "srs_acceptance": "Inventory lists data category, purpose, storage location, retention and access.",
+      "rtm_acceptance": "Inventory lists data category, purpose, storage location, retention and access.",
+      "original_rtm_row": 62,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-PRIV-003",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "PRIV-004",
+      "requirement": "The system shall minimize personal data collection and disable third-party analytics by default.",
+      "srs_acceptance": "Configuration and network inspection verify no analytics endpoints.",
+      "rtm_acceptance": "Configuration and network inspection verify no analytics endpoints.",
+      "original_rtm_row": 63,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-PRIV-004",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "PRIV-005",
+      "requirement": "Application logs shall exclude credentials, tokens and unnecessary identifiers.",
+      "srs_acceptance": "Automated log-redaction tests cover authentication and errors.",
+      "rtm_acceptance": "Automated log-redaction tests cover authentication and errors.",
+      "original_rtm_row": 64,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-PRIV-005",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "PRIV-006",
+      "requirement": "The system shall document retention, deletion and backup handling.",
+      "srs_acceptance": "Test verifies documented deletion procedure for synthetic sessions; audit-retention exception documented.",
+      "rtm_acceptance": "Test verifies documented deletion procedure for synthetic sessions; audit-retention exception documented.",
+      "original_rtm_row": 65,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-PRIV-006",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "PRIV-007",
+      "requirement": "A GDPR applicability assessment shall be maintained and reviewed on scope changes.",
+      "srs_acceptance": "Document explains whether identifiable natural-person data is processed and which obligations may apply.",
+      "rtm_acceptance": "Document explains whether identifiable natural-person data is processed and which obligations may apply.",
+      "original_rtm_row": 66,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-PRIV-007",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "PRIV-008",
+      "requirement": "Adding real or identifiable personal data shall require design and privacy review before release.",
+      "srs_acceptance": "Change checklist blocks unreviewed scope expansion.",
+      "rtm_acceptance": "Change checklist blocks unreviewed scope expansion.",
+      "original_rtm_row": 67,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-PRIV-008",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-001",
+      "requirement": "A missing scheduled SpO₂ reading interrupts consecutiveness and resets a pending activation or recovery counter; it does not clear an active alarm. A missed tick is detected using the deterministic simulation scheduler; the event is logged if storage is available. Verify low-low-gap-low does not activate, and recovery-recovery-gap-recovery does not clear.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-001",
+      "original_rtm_row": 68,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-001",
+      "original_risk_control_references": "RC-SAF-001",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-002",
+      "requirement": "Invalid physiological value, missing SpO₂ value, or malformed/missing measurement timestamp resets the applicable pending count; a duplicate/out-of-order timestamp, wrong session, or unauthorized input is rejected without changing alarm counters. None overwrite last accepted data. Each rejection is classified and tested.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-002",
+      "original_rtm_row": 69,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-002",
+      "original_risk_control_references": "RC-SAF-001; RC-SAF-006",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-003",
+      "requirement": "The backend uses a monotonic clock for 5-second staleness and simulation deadlines, and UTC timestamps for records. At 5.000 s a reading is CURRENT; at >5.000 s it is STALE. UI delivery ≤1 second applies only while the authenticated browser connection is healthy under the specified controlled test environment; transport loss produces an immediate connection-uncertain indicator on detection.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-003",
+      "original_rtm_row": 70,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-003",
+      "original_risk_control_references": "RC-SAF-003; RC-SAF-007",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-004",
+      "requirement": "Unexpected restart never resumes an old monitoring session or alarm episode automatically. UI shows monitoring stopped/restart detected; preserved event history is accessible only if storage is healthy; new session must be explicitly started. Verify with forced process termination and restart.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-004",
+      "original_rtm_row": 71,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-004",
+      "original_risk_control_references": "RC-SAF-007",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-005",
+      "requirement": "A monitoring-event write failure does not block alarm evaluation. The backend exposes event_storage_status=FAILED and history_completeness=INCOMPLETE; a subsequent successful write may restore write-health but must not claim that missing events were recovered. Verify failure and recovery behavior.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-005",
+      "original_rtm_row": 72,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-005",
+      "original_risk_control_references": "RC-SAF-005",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-006",
+      "requirement": "Network-mode operator commands that require accountable audit records (start/stop, acknowledge, sensor manipulation, security configuration) fail closed if the audit sink cannot accept a durable record, except an already-running sensor tick and automatic alarm evaluation must continue. The command response indicates failure without falsely reporting success; test audit-sink fault injection.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-006",
+      "original_rtm_row": 73,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-006",
+      "original_risk_control_references": "RC-CYB-012",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-007",
+      "requirement": "Local mode: bind 127.0.0.1 only; one explicit local-operator context, no remote access, visible mode banner; tests confirm external bind disabled. Network mode: secure authentication, Observer read-only, Operator authorized to start/stop/acknowledge and simulate sensor faults, session-level authorization for REST and WebSocket, origin and session checks, credential expiry/revocation handling.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-007",
+      "original_rtm_row": 74,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-007",
+      "original_risk_control_references": "RC-CYB-001; RC-CYB-006",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-008",
+      "requirement": "Every authoritative state snapshot includes session_id, revision, server timestamp, sensor status, connection-independent data freshness, alarm episode/state, storage health and history completeness. Revision increases for each accepted mutation; clients discard older revisions and GET a fresh snapshot after reconnection.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-008",
+      "original_rtm_row": 75,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-008",
+      "original_risk_control_references": "RC-SAF-007",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-009",
+      "requirement": "In deterministic scheduler tests, a 10-second active simulation emits 10 scheduled sets, with exact fake-clock ticks. In controlled local browser integration tests, 95% of accepted readings must render within 1.0 second of backend acceptance with no injected delay; all timing exceptions are logged and reviewed. This is a project target, not clinical performance validation.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-009",
+      "original_rtm_row": 76,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-009",
+      "original_risk_control_references": "RC-SAF-003",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-010",
+      "requirement": "Record each processed field (including account ID, IP address, timestamps, audit metadata), purpose, access, retention, deletion and applicable jurisdiction. Synthetic physiological data alone does not establish GDPR non-applicability. No real patient identifiers or patient data may enter test fixtures or production simulation.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-010",
+      "original_rtm_row": 77,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-010",
+      "original_risk_control_references": "RC-CYB-004",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-011",
+      "requirement": "A release requires approved requirement baseline, mapped hazard and cybersecurity controls, documented test outcomes, vulnerability dispositions, SBOM for exact locked dependencies, signed-off open anomalies and evidence tied to a source revision. This requirement defines a release gate; no release is yet approved.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-011",
+      "original_rtm_row": 78,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-011",
+      "original_risk_control_references": "RC-CYB-007; RC-CYB-011",
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    },
+    {
+      "id": "CL-012",
+      "requirement": "All unresolved choices in prior design drafts are resolved by CL-001–CL-011 for the educational baseline. Changes to these decisions require change-control review and impact analysis across risk, tests, and design.",
+      "srs_acceptance": null,
+      "rtm_acceptance": "Verify specified behavior in TC-CL-012",
+      "original_rtm_row": 79,
+      "original_status": "NOT RUN",
+      "original_planned_verification": "TC-CL-012",
+      "original_risk_control_references": null,
+      "status": "NOT IMPLEMENTED / NOT RUN",
+      "phase_1": null
+    }
+  ]
+}

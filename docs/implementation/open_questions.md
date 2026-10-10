@@ -1,7 +1,7 @@
 # Open questions and approval gates
 
 Project Author: Michael Mart
-Prepared by Codex, 10 October 2026. Status: all decisions below PENDING.
+Prepared by Codex, 10 October 2026. Q-01 progression APPROVED; all other decisions PENDING.
 
 Question labels are review references, not requirement IDs. No response, elapsed
 time, issue creation or pull request creation counts as approval. Answers should
@@ -14,7 +14,8 @@ development-environment setup after reviewing this Phase 0 pull request. The
 master prompt explicitly requires a stop here. Proposed next scope: locked Python
 and React/TypeScript environments, test/lint/type tooling, CI, smoke tests,
 development instructions and PR template; no alarm or application features yet.
-Gate: before any Phase 1 work. Status: PENDING.
+Gate: before any Phase 1 work. Status: APPROVED by Michael Mart's `yes` in this
+conversation on 10 October 2026; see [scope record](approvals.md).
 
 **Q-02 — Proposed baseline and change control.** Confirm that the explicit
 controlled addenda govern conflicting earlier text for planning, while source
@@ -52,6 +53,6 @@ questions above must not be dismissed by CL-012's broad closure statement.
 
 ## Approval record
 
-Phase 1 progression: PENDING. Baseline approval: PENDING. Document-correction
+Phase 1 progression: APPROVED for setup only (see [record](approvals.md)). Baseline approval: PENDING. Document-correction
 approval: PENDING. Risk acceptance: NOT ASSESSED. Merge approval: PENDING.
-Release approval: NOT REQUESTED. No approval has been inferred by Codex.
+Release approval: NOT REQUESTED. No additional approval has been inferred by Codex.
