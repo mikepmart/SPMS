@@ -109,6 +109,7 @@ retarget to `main` after the owner reviews and merges Phase 0.
 - RED: `bfd31f8e9c5b398c4d0efa109e05e3f2bd10a1d3`.
 - GREEN: `0a5a8f8c22fa5ed2d2b77a62e5965bcf468b924d`.
 - Verified source/toolchain/CI: `5cdc17663f1586309071b64157cb881342a3fe8b`.
+- Documentation/evidence handoff: `c429e21` (full SHA in repository history).
 - Parent issue [#2](https://github.com/mikepmart/SPMS/issues/2); work items
   [#12](https://github.com/mikepmart/SPMS/issues/12),
   [#13](https://github.com/mikepmart/SPMS/issues/13),
