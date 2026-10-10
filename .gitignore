@@ -2,6 +2,7 @@
 # Purpose: Keep environments, credentials, generated output and local data out of Git.
 # Requirements: AR-006, SEC-006; Controls: RC-CYB-009 (supporting configuration).
 .venv/
+.tools/
 __pycache__/
 *.py[cod]
 .pytest_cache/

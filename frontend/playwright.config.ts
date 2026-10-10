@@ -25,12 +25,14 @@ export default defineConfig({
       command: "npm run preview",
       url: "http://127.0.0.1:4173",
       reuseExistingServer: false,
+      timeout: 30_000,
     },
     {
       command:
         "uv run --locked --project ../backend uvicorn spms.api.app:create_app --factory --host 127.0.0.1 --port 8000",
       url: "http://127.0.0.1:8000/health",
       reuseExistingServer: false,
+      timeout: 30_000,
     },
   ],
 });

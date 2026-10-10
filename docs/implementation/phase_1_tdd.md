@@ -30,4 +30,24 @@ recorded separately. This commit is an intentional TDD RED commit.
 
 ## GREEN and verification
 
-Pending implementation and actual execution; no passing result is claimed here.
+RED commit: `bfd31f8` (full SHA available in Git history).
+
+The minimal implementation was then added: a fresh FastAPI factory with only
+`GET /health`, a stopped React shell, and the tested statement-coverage CLI.
+On Windows, the actual GREEN run passed all 13 Python cases and one frontend
+unit case. Python coverage is 7/7 statements (100%); there are no application
+branches yet, so branch coverage is not applicable (0/0), not a claimed 100%.
+Frontend unit coverage is 1/5 statements (20%): the component is covered and the
+browser entry point is not exercised by jsdom. The entry point remains in the
+report; browser verification is separate. The Python 90% gate is not applied
+to frontend source.
+
+Frontend type checking exposed incompatible Vitest 5 / jest-dom declaration
+parameters. Vitest and its coverage provider were pinned together to compatible
+4.1.11; the accidental Jest-global type inclusion was removed. Strict checking
+remains enabled, without `skipLibCheck`. Tests, lint, types and build were rerun.
+No test assertion or required behavior was weakened to pass these checks.
+
+The [Phase 1 report](phase_1_report.md) records final browser, scan, commit and
+CI evidence. No product-level requirement or risk control is declared VERIFIED
+by these bootstrap checks.
