@@ -1,0 +1,27 @@
+# Project: SPMS | Project Author: Michael Mart | Prepared by Codex
+# Purpose: Keep environments, credentials, generated output and local data out of Git.
+# Requirements: AR-006, SEC-006; Controls: RC-CYB-009 (supporting configuration).
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+*.egg-info/
+node_modules/
+dist/
+artifacts/
+playwright-report/
+test-results/
+coverage/
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite*
+.DS_Store
+Thumbs.db
+
