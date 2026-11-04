@@ -1,0 +1,66 @@
+# Project: Simulated Patient Monitoring System (SPMS)
+# Project Author: Michael Mart | Prepared by Codex
+# File: pyproject.toml
+# Purpose: Define the locked backend package and verification toolchain.
+# Responsibilities: Packaging, tests, lint/types and complete application coverage.
+# Requirements: AR-001, AR-004, AR-006, QA-001–008, SEC-007, SEC-008.
+# Controls: RC-CYB-007 (supporting tooling; not verified product security).
+[project]
+name = "spms-backend"
+version = "0.1.0"
+description = "Synthetic-data-only educational monitoring simulation scaffold"
+authors = [{ name = "Michael Mart" }]
+requires-python = ">=3.14,<3.15"
+dependencies = ["fastapi==0.143.0", "uvicorn==0.54.0"]
+
+[dependency-groups]
+dev = [
+  "bandit==1.9.4",
+  "cyclonedx-bom==7.5.0",
+  "httpx2==2.13.1",
+  "mypy==2.4.0",
+  "pip-audit==2.10.1",
+  "pytest==9.1.1",
+  "pytest-cov==7.1.0",
+  "ruff==0.17.0",
+]
+
+[build-system]
+requires = ["uv_build==0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "spms"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra --strict-config --strict-markers"
+filterwarnings = ["error"]
+markers = [
+  "unit: isolated code behavior",
+  "integration: application and adapter boundaries",
+  "security: negative security and safe-default checks",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["spms"]
+relative_files = true
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = false
+
+[tool.ruff]
+target-version = "py314"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+files = ["."]
+

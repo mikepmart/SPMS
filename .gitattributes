@@ -1,0 +1,10 @@
+# Project: SPMS | Project Author: Michael Mart | Prepared by Codex
+# Purpose: Keep maintained text consistent and baseline binaries unchanged.
+# Requirements: DOC-001, AR-006.
+* text=auto eol=lf
+*.docx binary
+*.xlsx binary
+*.pdf binary
+*.png binary
+*.zip binary
+

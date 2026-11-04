@@ -1,0 +1,519 @@
+{
+  "project_author": "Michael Mart",
+  "prepared_by": "Codex",
+  "run": {
+    "id": 38076892742,
+    "sha": "5cdc17663f1586309071b64157cb881342a3fe8b",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742",
+    "jobs": [
+      {
+        "id": 114285645817,
+        "name": "Dependencies, static security and SBOM",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/job/114285645817",
+        "failed_steps": []
+      },
+      {
+        "id": 114285645953,
+        "name": "Backend (ubuntu-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/job/114285645953",
+        "failed_steps": []
+      },
+      {
+        "id": 114285645992,
+        "name": "Backend (windows-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/job/114285645992",
+        "failed_steps": []
+      },
+      {
+        "id": 114285646019,
+        "name": "Chromium smoke",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/job/114285646019",
+        "failed_steps": []
+      },
+      {
+        "id": 114285646030,
+        "name": "Git history secret scan",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/job/114285646030",
+        "failed_steps": []
+      },
+      {
+        "id": 114285646052,
+        "name": "Frontend (ubuntu-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/job/114285646052",
+        "failed_steps": []
+      },
+      {
+        "id": 114285646071,
+        "name": "Frontend (windows-latest)",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/job/114285646071",
+        "failed_steps": []
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "name": "backend-ubuntu-latest-5cdc17663f1586309071b64157cb881342a3fe8b",
+      "id": 11679385702,
+      "sha256": "sha256:46b23088be43f36ea948694b5c2ab645867d3eee0962dfe93a702343d1ec1444",
+      "expired": false,
+      "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/artifacts/11679385702",
+      "reports": {
+        "coverage-gate.json": {
+          "covered_statements": 7,
+          "statements": 7,
+          "statement_percent": 100.0,
+          "covered_branches": 0,
+          "branches": 0,
+          "branch_percent": null,
+          "minimum_statement_percent": 90
+        },
+        "coverage.json": {
+          "covered_lines": 7,
+          "num_statements": 7,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 0,
+          "num_partial_branches": 0,
+          "covered_branches": 0,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "junit.xml": {
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "chromium-5cdc17663f1586309071b64157cb881342a3fe8b",
+      "id": 11679251776,
+      "sha256": "sha256:db618c5996e01fdce558dbbbd5a5a7454d692745614006d57e35feb84a8b45b3",
+      "expired": false,
+      "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/artifacts/11679251776",
+      "reports": {
+        "junit.xml": {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "secrets-5cdc17663f1586309071b64157cb881342a3fe8b",
+      "id": 11679106808,
+      "sha256": "sha256:584516e15545f60aa4b4fba9f9e0c74b0d46bdafaeb114c9df2d565ec0b63696",
+      "expired": false,
+      "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/artifacts/11679106808",
+      "reports": {
+        "secrets.json": {
+          "findings": 0
+        }
+      }
+    },
+    {
+      "name": "frontend-windows-latest-5cdc17663f1586309071b64157cb881342a3fe8b",
+      "id": 11679096776,
+      "sha256": "sha256:1504b0e65d4abe4650aa14da9edbf0d65396c6c3820d9f57f1e90f6f4c7be42d",
+      "expired": false,
+      "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/artifacts/11679096776",
+      "reports": {
+        "coverage/coverage-summary.json": {
+          "lines": {
+            "total": 4,
+            "covered": 1,
+            "skipped": 0,
+            "pct": 25
+          },
+          "statements": {
+            "total": 5,
+            "covered": 1,
+            "skipped": 0,
+            "pct": 20
+          },
+          "functions": {
+            "total": 1,
+            "covered": 1,
+            "skipped": 0,
+            "pct": 100
+          },
+          "branches": {
+            "total": 2,
+            "covered": 0,
+            "skipped": 0,
+            "pct": 0
+          },
+          "branchesTrue": {
+            "total": 0,
+            "covered": 0,
+            "skipped": 0,
+            "pct": "Unknown"
+          }
+        },
+        "unit-junit.xml": {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "frontend-ubuntu-latest-5cdc17663f1586309071b64157cb881342a3fe8b",
+      "id": 11679031062,
+      "sha256": "sha256:91e3d3f3f3586c1bf02ba7bc3373da87303f96d004f4404a331bfad6cdfd45d8",
+      "expired": false,
+      "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/artifacts/11679031062",
+      "reports": {
+        "coverage/coverage-summary.json": {
+          "lines": {
+            "total": 4,
+            "covered": 1,
+            "skipped": 0,
+            "pct": 25
+          },
+          "statements": {
+            "total": 5,
+            "covered": 1,
+            "skipped": 0,
+            "pct": 20
+          },
+          "functions": {
+            "total": 1,
+            "covered": 1,
+            "skipped": 0,
+            "pct": 100
+          },
+          "branches": {
+            "total": 2,
+            "covered": 0,
+            "skipped": 0,
+            "pct": 0
+          },
+          "branchesTrue": {
+            "total": 0,
+            "covered": 0,
+            "skipped": 0,
+            "pct": "Unknown"
+          }
+        },
+        "unit-junit.xml": {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "security-5cdc17663f1586309071b64157cb881342a3fe8b",
+      "id": 11678727258,
+      "sha256": "sha256:3f8f31c11e157357f9ed3f0cd29bbfec7948c2d294055ca4bff6a93d4bb27e82",
+      "expired": false,
+      "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/artifacts/11678727258",
+      "reports": {
+        "backend-sbom.json": {
+          "format": "CycloneDX",
+          "spec": "1.6",
+          "components": 79
+        },
+        "bandit.json": {
+          "findings": 0,
+          "errors": [],
+          "metrics": {
+            "CONFIDENCE.HIGH": 0,
+            "CONFIDENCE.LOW": 0,
+            "CONFIDENCE.MEDIUM": 0,
+            "CONFIDENCE.UNDEFINED": 0,
+            "SEVERITY.HIGH": 0,
+            "SEVERITY.LOW": 0,
+            "SEVERITY.MEDIUM": 0,
+            "SEVERITY.UNDEFINED": 0,
+            "loc": 68,
+            "nosec": 0,
+            "skipped_tests": 0
+          }
+        },
+        "frontend-sbom.json": {
+          "format": "CycloneDX",
+          "spec": "1.6",
+          "components": 375
+        },
+        "npm-audit.json": {
+          "vulnerabilities": {
+            "info": 0,
+            "low": 0,
+            "moderate": 0,
+            "high": 0,
+            "critical": 0,
+            "total": 0
+          },
+          "dependencies": {
+            "prod": 4,
+            "dev": 441,
+            "optional": 166,
+            "peer": 0,
+            "peerOptional": 0,
+            "total": 444
+          }
+        },
+        "python-audit.json": {
+          "dependencies": 79,
+          "vulnerabilities": 0,
+          "skipped": []
+        }
+      }
+    },
+    {
+      "name": "backend-windows-latest-5cdc17663f1586309071b64157cb881342a3fe8b",
+      "id": 11678547602,
+      "sha256": "sha256:4424821f5741907a32467cc86de81bac3064d3bfbff9b0fc86f916c60bc4a427",
+      "expired": false,
+      "url": "https://github.com/mikepmart/SPMS/actions/runs/38076892742/artifacts/11678547602",
+      "reports": {
+        "coverage-gate.json": {
+          "covered_statements": 7,
+          "statements": 7,
+          "statement_percent": 100.0,
+          "covered_branches": 0,
+          "branches": 0,
+          "branch_percent": null,
+          "minimum_statement_percent": 90
+        },
+        "coverage.json": {
+          "covered_lines": 7,
+          "num_statements": 7,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 0,
+          "num_partial_branches": 0,
+          "covered_branches": 0,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "junit.xml": {
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      }
+    }
+  ],
+  "local": {
+    "platform": "Windows",
+    "python": "3.14.8",
+    "uv": "0.13.0",
+    "node": "24.21.0",
+    "npm": "11.19.0",
+    "red_backend": {
+      "name": "backend",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "--junitxml=../artifacts/phase1/red/backend.xml"
+      ],
+      "cwd": "C:\\SPMS\\SPMS\\backend",
+      "started_utc": "2026-10-10T18:31:43.881595+00:00",
+      "finished_utc": "2026-10-10T18:31:45.262601+00:00",
+      "exit_code": 1
+    },
+    "red_frontend": {
+      "name": "frontend",
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "cwd": "C:\\SPMS\\SPMS\\frontend",
+      "started_utc": "2026-10-10T18:31:44.680635+00:00",
+      "finished_utc": "2026-10-10T18:31:45.953314+00:00",
+      "exit_code": 1
+    },
+    "green_backend": {
+      "name": "backend",
+      "command": [
+        "uv",
+        "run",
+        "--locked",
+        "pytest",
+        "--cov=spms",
+        "--cov-branch",
+        "--cov-report=term-missing",
+        "--cov-report=json:../artifacts/backend/coverage.json",
+        "--cov-report=xml:../artifacts/backend/coverage.xml",
+        "--junitxml=../artifacts/backend/junit.xml",
+        "-q"
+      ],
+      "cwd": "C:\\SPMS\\SPMS\\backend",
+      "started_utc": "2026-10-10T18:33:23.262186+00:00",
+      "finished_utc": "2026-10-10T18:33:25.020404+00:00",
+      "exit_code": 0
+    },
+    "green_frontend": {
+      "name": "frontend",
+      "command": [
+        "npm.cmd",
+        "run",
+        "test:coverage"
+      ],
+      "cwd": "C:\\SPMS\\SPMS\\frontend",
+      "started_utc": "2026-10-10T18:37:58.991964+00:00",
+      "finished_utc": "2026-10-10T18:38:11.517315+00:00",
+      "exit_code": 0
+    },
+    "clean_browser": {
+      "name": "clean-browser",
+      "command": [
+        "npm.cmd",
+        "run",
+        "test:e2e"
+      ],
+      "cwd": "C:\\SPMS\\tmp\\phase1\\clean\\frontend",
+      "started_utc": "2026-10-10T18:44:39.612819+00:00",
+      "finished_utc": "2026-10-10T18:44:42.708382+00:00",
+      "exit_code": 0
+    },
+    "clean_install_revision": "5cdc17663f1586309071b64157cb881342a3fe8b",
+    "clean_installs": "PASS — fresh uv environment and npm ci; backend 13, frontend 1, Chromium 1 pass; production build passed",
+    "first_browser_attempt": "Test assertion passed, then restricted cleanup hung; process tree stopped, exit nonzero; not counted as completed verification. Unsandboxed rerun and separate clean-worktree run both exited 0."
+  },
+  "source_integrity": [
+    {
+      "path": "design/docs/SPMS-AO-001_v1.2.docx",
+      "sha256": "da2b8d4cf706d090baedc6b239041e92e42a0d431c0cbb47c4e517ca30497232",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-CRA-001_v1.1.docx",
+      "sha256": "5422032f8856b49777d0309be41c17a0810eb639e5a7ec1987055f1032b0fe53",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-RMP-001_v1.0.docx",
+      "sha256": "b5412be4ea7e6103852e3f3adf9e6b3469fb452c4541ede3d7e0ebd4b3c672c8",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-RTM-001_v1.1.xlsx",
+      "sha256": "3928ea3c1ec4c466703657d56cf01cb0e569dceaeaecde822e500b41f43154bf",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-SAD-001_v1.3.docx",
+      "sha256": "886a8bfb7554f6cb45eff0fdeb4d4ec147203096c33cb68cac5a2c9fccdba853",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-SDD-001_v1.1.docx",
+      "sha256": "7c6bb989d78675699f97d5fa48ab0f9fd9f4c6f5c64e76b19c87ff4baac62bdc",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-SDP-001_v1.0.docx",
+      "sha256": "6bf0d93082217be0f14a59f8e528aa0f54351027e058b1c6221b86bb9bfe943a",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-SHA-001_v1.1.docx",
+      "sha256": "0a54fb6b725dec941f303e22d7e59feaabe94426eace593bee758f1dbecdfb7f",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-SRS-001_v1.2.docx",
+      "sha256": "a7cb60481333f4b30f59a5d16338e96a3fab62b9e8202435bd04f4ea405dfa49",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/docs/SPMS-STP-001_v1.1.docx",
+      "sha256": "300e2eafc80bcecfc7411fa1e3a10660c499e0896ab8e9d713fb23ce51765187",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/regs/CELEX_32016R0679_EN_TXT.pdf",
+      "sha256": "bd84e63f5b622b739a83389afc3b30d240f792bb88d8eb03a816c9a82b0c2499",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/regs/mdcg_2019_16_cybersecurity_en.pdf",
+      "sha256": "f01f0a1baf72a223558655f924b6e549c89627f5c73beaf2262a6573568c5d53",
+      "result": "UNCHANGED"
+    },
+    {
+      "path": "design/regs/Premarket-Cybersecurity-Guidance-2026.pdf",
+      "sha256": "d046fa836048933e1a8795bcf2f8224bcfa08789c2f3ef6f46ae53c2eb096c54",
+      "result": "UNCHANGED"
+    }
+  ],
+  "traceability_check": {
+    "requirements": 78,
+    "exact_requirement_and_criteria_preservation": "PASS",
+    "fully_verified": 0
+  },
+  "tool_pins": {
+    "actions/checkout": {
+      "version": "v7.0.1",
+      "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    "actions/setup-python": {
+      "version": "v7.0.0",
+      "sha": "5fda3b95a4ea91299a34e894583c3862153e4b97"
+    },
+    "actions/setup-node": {
+      "version": "v7.1.0",
+      "sha": "949feb2413d6458794dcd2491c4babbbce0c15c1"
+    },
+    "actions/upload-artifact": {
+      "version": "v7.0.2",
+      "sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+    },
+    "gitleaks/gitleaks": {
+      "version": "v8.30.1",
+      "assets": [
+        "gitleaks_8.30.1_checksums.txt",
+        "gitleaks_8.30.1_darwin_arm64.tar.gz",
+        "gitleaks_8.30.1_darwin_x64.tar.gz",
+        "gitleaks_8.30.1_linux_arm64.tar.gz",
+        "gitleaks_8.30.1_linux_armv6.tar.gz",
+        "gitleaks_8.30.1_linux_armv7.tar.gz",
+        "gitleaks_8.30.1_linux_x32.tar.gz",
+        "gitleaks_8.30.1_linux_x64.tar.gz",
+        "gitleaks_8.30.1_windows_arm64.zip",
+        "gitleaks_8.30.1_windows_x32.zip",
+        "gitleaks_8.30.1_windows_x64.zip"
+      ]
+    }
+  }
+}

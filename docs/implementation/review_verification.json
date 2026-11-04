@@ -1,0 +1,68 @@
+{
+  "project_author": "Michael Mart",
+  "prepared_by": "Codex",
+  "generated_at_utc": "2026-10-10T18:10:00.048926+00:00",
+  "scope": "Phase 0 document review only; no application verification or CI run",
+  "checks": [
+    {
+      "check": "Source preservation",
+      "result": "PASS",
+      "source_pairs": 13,
+      "matched_sha256": 13,
+      "committed_blob_matches": 13
+    },
+    {
+      "check": "Requirement fidelity and status",
+      "result": "PASS",
+      "exact_text_matches": 78,
+      "separate_srs_acceptance_matches": 54,
+      "pending_ar_doc_criteria": 12,
+      "clarifications": 12,
+      "not_run_records": 78
+    },
+    {
+      "check": "Risk/control review integrity",
+      "result": "PASS",
+      "existing_controls": 22,
+      "blank_primary_links": 2,
+      "placeholder_control_test_links": 22,
+      "requirement_rows_needing_risk_link_review": 45
+    },
+    {
+      "check": "Requested artifacts and published work-item metadata",
+      "result": "PASS",
+      "required_review_files": 5,
+      "phase_report": 1,
+      "phase_issues": 10
+    },
+    {
+      "check": "Local Markdown targets",
+      "result": "PASS",
+      "checked_links": 40
+    },
+    {
+      "check": "Limited credential-pattern review",
+      "result": "PASS",
+      "reviewed_files": 34,
+      "scope": "Maintained Markdown/JSON and extracted baseline text; not a comprehensive security scan"
+    },
+    {
+      "check": "Git whitespace checks",
+      "result": "PASS",
+      "commands": [
+        "git diff --check",
+        "git diff --cached --check"
+      ]
+    }
+  ],
+  "check_groups_passed": 7,
+  "check_groups_failed": 0,
+  "application_tests": "NOT RUN",
+  "application_pass_fail_counts": null,
+  "statement_coverage": null,
+  "branch_coverage": null,
+  "ruff_mypy_frontend_lint_types": "NOT RUN",
+  "ci": "NOT RUN",
+  "source_risk_controls": "OPEN / NOT VERIFIED",
+  "residual_risk": "NOT ASSESSED"
+}
